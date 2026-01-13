@@ -44,6 +44,14 @@
             font-size: 1.5rem; font-weight: 400;
             letter-spacing: 0.02em; color: var(--black);
             text-decoration: none;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .logo-icon {
+            width: 40px; height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
         }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
@@ -154,8 +162,6 @@
             transition: all 0.3s ease;
         }
         .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
-        .image-banner { width: 100%; height: 70vh; overflow: hidden; }
-        .image-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         .services { padding: 8rem 3rem; background: var(--cream); }
         .services-header { text-align: center; margin-bottom: 5rem; }
         .section-label {
@@ -165,8 +171,8 @@
         }
         .section-title { font-size: 2.5rem; color: var(--black); }
         .services-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 2rem; max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem; max-width: 1200px; margin: 0 auto;
         }
         .service-item { text-align: center; overflow: hidden; }
         .service-image {
@@ -374,6 +380,8 @@
         }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.2rem; }
+            .logo-icon { width: 35px; height: 35px; }
             .menu-toggle { display: flex; }
             .nav-links {
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -384,8 +392,7 @@
             .nav-links.active { opacity: 1; pointer-events: all; }
             .nav-links a { font-size: 0.9rem; }
             .hero-title { font-size: 2rem; }
-            .hero-image { object-position: center 35%; }
-            .image-banner img { object-position: 50% center; }
+            .hero-image { object-position: center 45%; }
             .intro, .services, .portfolio, .about, .experience, .testimonials, .faq, .contact { padding: 5rem 1.5rem; }
             .section-title, .intro h2, .about-text h2, .contact-info-section h2 { font-size: 1.8rem; }
             .services-grid { grid-template-columns: 1fr; }
@@ -399,7 +406,33 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">Melissa Pocek</a>
+        <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer circle (camera lens) -->
+                <circle cx="50" cy="50" r="48" fill="none" stroke="#2a2a2a" stroke-width="1.5" opacity="0.15"/>
+
+                <!-- Inner elegant frame -->
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#2a2a2a" stroke-width="0.8" opacity="0.3"/>
+
+                <!-- M letterform - elegant serif style -->
+                <path d="M 28 65 L 28 38 L 35 55 L 42 38 L 42 65"
+                      fill="none" stroke="#2a2a2a" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- P letterform - elegant serif style with curved bowl -->
+                <path d="M 58 65 L 58 35 L 68 35 Q 75 35 75 43 Q 75 51 68 51 L 58 51"
+                      fill="none" stroke="#2a2a2a" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Subtle aperture detail at bottom -->
+                <g opacity="0.2">
+                    <line x1="50" y1="86" x2="50" y2="92" stroke="#2a2a2a" stroke-width="0.8"/>
+                    <line x1="40" y1="88" x2="42" y2="90" stroke="#2a2a2a" stroke-width="0.8"/>
+                    <line x1="60" y1="88" x2="58" y2="90" stroke="#2a2a2a" stroke-width="0.8"/>
+                </g>
+            </svg>
+            <span>Melissa Pocek</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -430,10 +463,6 @@
         <a href="#contact" class="btn-secondary">Let's work together</a>
     </section>
 
-    <div class="image-banner">
-        <img src="images/photo-02.jpg" alt="Wedding moment">
-    </div>
-
     <section class="services" id="services">
         <div class="services-header">
             <p class="section-label">What I Offer</p>
@@ -452,13 +481,8 @@
             </div>
             <div class="service-item reveal">
                 <img src="images/photo-05.jpg" alt="Corporate Events" class="service-image">
-                <h3>Corporate Events</h3>
-                <p>Conferences, galas & company celebrations</p>
-            </div>
-            <div class="service-item reveal">
-                <img src="images/photo-06.jpg" alt="Networking Events" class="service-image">
-                <h3>Networking</h3>
-                <p>Professional gatherings & industry events</p>
+                <h3>Corporate & Professional Events</h3>
+                <p>Conferences, galas, networking events & company celebrations</p>
             </div>
         </div>
         <p class="investment-note">Wedding collections start at <strong>$3,500</strong> · Corporate events from <strong>$500/hour</strong></p>
@@ -477,7 +501,7 @@
                 <img src="images/photo-07.jpg" alt="Indian wedding couple">
             </div>
             <div class="portfolio-item reveal">
-                <img src="images/photo-08.jpg" alt="Couple kissing">
+                <img src="images/photo-04.jpg" alt="Wedding reception details">
             </div>
             <div class="portfolio-item reveal">
                 <img src="images/photo-09.jpg" alt="Indian couple portrait">
@@ -495,16 +519,16 @@
                 <img src="images/photo-13.jpg" alt="Corporate culture">
             </div>
             <div class="portfolio-item wide reveal">
-                <img src="images/photo-14.jpg" alt="Couple session">
+                <img src="images/photo-17.jpg" alt="Couple session">
             </div>
             <div class="portfolio-item reveal">
                 <img src="images/photo-15.jpg" alt="Hawaii wedding">
             </div>
             <div class="portfolio-item reveal">
-                <img src="images/photo-16.jpg" alt="Intimate moment">
+                <img src="images/photo-06.jpg" alt="Couple portrait">
             </div>
             <div class="portfolio-item reveal">
-                <img src="images/photo-02.jpg" alt="Bride with ring bearer">
+                <img src="images/photo-10.jpg" alt="Wedding reception celebration">
             </div>
             <div class="portfolio-item reveal">
                 <img src="images/photo-18.jpg" alt="Outdoor wedding">
@@ -644,7 +668,7 @@
                     </div>
                     <div class="contact-detail-item">
                         <span>Follow Along</span>
-                        <a href="#">@melissapocekphoto</a>
+                        <a href="https://instagram.com/melissapocekphoto" target="_blank">@melissapocekphoto</a>
                     </div>
                 </div>
             </div>
@@ -693,22 +717,22 @@
 
     <section class="instagram">
         <div class="instagram-header">
-            <a href="#">Follow along @melissapocekphoto</a>
+            <a href="https://instagram.com/melissapocekphoto" target="_blank">Follow along @melissapocekphoto</a>
         </div>
         <div class="instagram-grid">
-            <img src="images/photo-04.jpg" alt="Instagram">
-            <img src="images/photo-05.jpg" alt="Instagram">
-            <img src="images/photo-08.jpg" alt="Instagram">
-            <img src="images/photo-12.jpg" alt="Instagram">
-            <img src="images/photo-09.jpg" alt="Instagram">
-            <img src="images/photo-01.jpg" alt="Instagram">
+            <img src="images/photo-20.jpg" alt="Instagram">
+            <img src="images/photo-21.jpg" alt="Instagram">
+            <img src="images/photo-22.jpg" alt="Instagram">
+            <img src="images/photo-23.jpg" alt="Instagram">
+            <img src="images/photo-24.jpg" alt="Instagram">
+            <img src="images/photo-25.jpg" alt="Instagram">
         </div>
     </section>
 
     <footer>
         <p class="footer-logo">Melissa Pocek Photography</p>
         <div class="footer-links">
-            <a href="#">Instagram</a>
+            <a href="https://instagram.com/melissapocekphoto" target="_blank">Instagram</a>
         </div>
         <p class="copyright">© 2025 Melissa Pocek Photography. All rights reserved.</p>
     </footer>

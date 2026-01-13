@@ -44,6 +44,14 @@
             font-size: 1.5rem; font-weight: 400;
             letter-spacing: 0.02em; color: var(--black);
             text-decoration: none;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .logo-icon {
+            width: 40px; height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
         }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
@@ -374,6 +382,8 @@
         }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.2rem; }
+            .logo-icon { width: 35px; height: 35px; }
             .menu-toggle { display: flex; }
             .nav-links {
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -399,7 +409,33 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">Melissa Pocek</a>
+        <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer circle (camera lens) -->
+                <circle cx="50" cy="50" r="48" fill="none" stroke="#2a2a2a" stroke-width="1.5" opacity="0.15"/>
+
+                <!-- Inner elegant frame -->
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#2a2a2a" stroke-width="0.8" opacity="0.3"/>
+
+                <!-- M letterform - elegant serif style -->
+                <path d="M 28 65 L 28 38 L 35 55 L 42 38 L 42 65"
+                      fill="none" stroke="#2a2a2a" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- P letterform - elegant serif style with curved bowl -->
+                <path d="M 58 65 L 58 35 L 68 35 Q 75 35 75 43 Q 75 51 68 51 L 58 51"
+                      fill="none" stroke="#2a2a2a" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Subtle aperture detail at bottom -->
+                <g opacity="0.2">
+                    <line x1="50" y1="86" x2="50" y2="92" stroke="#2a2a2a" stroke-width="0.8"/>
+                    <line x1="40" y1="88" x2="42" y2="90" stroke="#2a2a2a" stroke-width="0.8"/>
+                    <line x1="60" y1="88" x2="58" y2="90" stroke="#2a2a2a" stroke-width="0.8"/>
+                </g>
+            </svg>
+            <span>Melissa Pocek</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>

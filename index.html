@@ -31,7 +31,7 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 1.5rem 2.4rem;
+            padding: 1.5rem 3rem;
             display: flex; justify-content: space-between; align-items: center;
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(10px);
@@ -42,7 +42,7 @@
         nav.scrolled {
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 1px 20px rgba(0,0,0,0.05);
-            padding: 1rem 2.4rem;
+            padding: 1rem 3rem;
         }
         .logo {
             font-family: 'Cormorant Garamond', serif;
@@ -52,7 +52,7 @@
             display: flex; align-items: center; gap: 0.75rem;
         }
         .logo-icon {
-            width: 108px; height: 108px;
+            width: 45px; height: 45px;
             transition: transform 0.3s ease;
         }
         .logo:hover .logo-icon {
@@ -384,9 +384,9 @@
             .instagram-grid { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 768px) {
-            nav { padding: 0.8rem 1.2rem; }
-            .logo { font-size: 1.17rem; font-weight: 400; }
-            .logo-icon { width: 41px; height: 41px; }
+            nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.2rem; font-weight: 400; }
+            .logo-icon { width: 38px; height: 38px; }
             .menu-toggle { display: flex; }
             .nav-links {
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -412,21 +412,44 @@
 <body>
     <nav>
         <a href="#" class="logo">
-            <svg class="logo-icon" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
-                <!-- MELISSA POCEK PHOTOGRAPHY - LOGO A: VIEWFINDER -->
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer elegant frame with subtle detail -->
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#2a2a2a" stroke-width="0.5" opacity="0.2"/>
 
-                <!-- Double frame - viewfinder -->
-                <rect x="100" y="60" width="200" height="135" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
-                <rect x="112" y="72" width="176" height="111" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+                <!-- Inner refined frame -->
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#2a2a2a" stroke-width="0.6" opacity="0.25"/>
 
-                <!-- MP monogram -->
-                <text x="200" y="150" font-family="Cormorant Garamond, Georgia, serif" font-size="58" fill="#1A1A1A" text-anchor="middle" letter-spacing="12" font-weight="700">MP</text>
+                <!-- M letterform - refined serif with elegant proportions -->
+                <g>
+                    <!-- Main strokes -->
+                    <path d="M 26 64 L 26 36 Q 26 35 27 35 L 27 35 Q 28 35 28 36 L 35 54 L 42 36 Q 42 35 43 35 L 43 35 Q 44 35 44 36 L 44 64"
+                          fill="none" stroke="#2a2a2a" stroke-width="2.2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Subtle serif details -->
+                    <path d="M 24 64 L 28 64 M 42 64 L 46 64"
+                          stroke="#2a2a2a" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+                </g>
 
-                <!-- Full name -->
-                <text x="200" y="230" font-family="Montserrat, Helvetica, sans-serif" font-size="12" fill="#1A1A1A" text-anchor="middle" letter-spacing="5" font-weight="600">MELISSA POCEK</text>
+                <!-- P letterform - elegant curved bowl with refined proportions -->
+                <g>
+                    <!-- Main vertical stroke with serif -->
+                    <path d="M 56 64 L 56 36 Q 56 35 57 35"
+                          fill="none" stroke="#2a2a2a" stroke-width="2.2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Curved bowl -->
+                    <path d="M 56 36 L 65 36 Q 72 36 72 43.5 Q 72 51 65 51 L 56 51"
+                          fill="none" stroke="#2a2a2a" stroke-width="2.2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Bottom serif -->
+                    <path d="M 54 64 L 58 64"
+                          stroke="#2a2a2a" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+                </g>
 
-                <!-- Photography tagline -->
-                <text x="200" y="255" font-family="Montserrat, Helvetica, sans-serif" font-size="9" fill="#1A1A1A" text-anchor="middle" letter-spacing="6" font-weight="500">PHOTOGRAPHY</text>
+                <!-- Delicate accent marks -->
+                <g opacity="0.15">
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#2a2a2a" stroke-width="0.4"/>
+                    <path d="M 50 12 L 50 18 M 50 82 L 50 88" stroke="#2a2a2a" stroke-width="0.6"/>
+                </g>
             </svg>
             <span>Melissa Pocek Photo</span>
         </a>
